@@ -1,0 +1,118 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{07C4F353-8F0A-488C-A4A1-29D5E899E17D}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DataMatrixCF.net</RootNamespace>
+    <AssemblyName>DataMatrixCF.net</AssemblyName>
+    <TargetFrameworkVersion>CF 3.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\Michael Faschinger\AppData\Roaming\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE;WINCE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(SharpDevelopBinPath)\SharpDevelop.Build.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="Microsoft.WindowsCE.Forms.dll" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\DataMatrix.net\C40TextState.cs">
+      <Link>C40TextState.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxBestLine.cs">
+      <Link>DmtxBestLine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxBresLine.cs">
+      <Link>DmtxBresLine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxChannel.cs">
+      <Link>DmtxChannel.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxCommon.cs">
+      <Link>DmtxCommon.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxConstants.cs">
+      <Link>DmtxConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxDecode.cs">
+      <Link>DmtxDecode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxEncode.cs">
+      <Link>DmtxEncode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxFollow.cs">
+      <Link>DmtxFollow.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxImage.cs">
+      <Link>DmtxImage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxImageDecoder.cs">
+      <Link>DmtxImageDecoder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxImageEncoder.cs">
+      <Link>DmtxImageEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxImageEncoderOptions.cs">
+      <Link>DmtxImageEncoderOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxMatrix3.cs">
+      <Link>DmtxMatrix3.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxMessage.cs">
+      <Link>DmtxMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxMultiplet.cs">
+      <Link>DmtxMultiplet.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxPixelLoc.cs">
+      <Link>DmtxPixelLoc.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxPointFlow.cs">
+      <Link>DmtxPointFlow.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxRay2.cs">
+      <Link>DmtxRay2.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxRegion.cs">
+      <Link>DmtxRegion.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxScanGrid.cs">
+      <Link>DmtxScanGrid.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DataMatrix.net\DmtxVector2.cs">
+      <Link>DmtxVector2.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+</Project>
