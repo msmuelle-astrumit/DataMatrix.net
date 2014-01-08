@@ -87,7 +87,7 @@ namespace DataMatrix.net
 
         private static byte[] GetRawDataAndSetEncoding(string code, DmtxImageEncoderOptions options, DmtxEncode encode)
         {
-            byte[] result = Encoding.ASCII.GetBytes(code);
+            byte[] result = options.Encoding.GetBytes(code);
             encode.Scheme = options.Scheme;
             if (options.Scheme == DmtxScheme.DmtxSchemeAsciiGS1)
             {

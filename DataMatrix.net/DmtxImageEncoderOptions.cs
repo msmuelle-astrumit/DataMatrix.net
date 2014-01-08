@@ -47,6 +47,7 @@ namespace DataMatrix.net
             Scheme = DmtxScheme.DmtxSchemeAscii;
             ModuleSize = 5;
             MarginSize = 10;
+            Encoding = Encoding.ASCII;
         }
 
         #endregion
@@ -64,6 +65,8 @@ namespace DataMatrix.net
         public Color ForeColor { get; set; }
 
         public Color BackColor { get; set; }
+
+        public Encoding Encoding { get; set; }
 
         #endregion
     }
