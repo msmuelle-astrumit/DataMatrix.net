@@ -40,6 +40,22 @@ namespace DataMatrix.net
 {
     public class DmtxImageDecoder
     {
+        private readonly Encoding encoding;
+
+        public Encoding Encoding
+        {
+            get { return encoding; }
+        }
+
+        public DmtxImageDecoder(Encoding encoding)
+        {
+            this.encoding = encoding;
+        }
+
+        public DmtxImageDecoder() : this(Encoding.ASCII)
+        {
+        }
+
         /// <summary>
         /// returns a list of all decoded DataMatrix codes in the image provided
         /// </summary>
@@ -100,7 +116,7 @@ namespace DataMatrix.net
             int stride;
             byte[] rawImg = ImageToByteArray(image, out stride);
             DmtxImage dmtxImg = new DmtxImage(rawImg, image.Width, image.Height, DmtxPackOrder.DmtxPack24bppRGB);
-            dmtxImg.RowPadBytes = stride % 3;
+            dmtxImg.RowPadBytes = stride%3;
             DmtxDecode decode = new DmtxDecode(dmtxImg, 1);
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
@@ -114,7 +130,7 @@ namespace DataMatrix.net
                 if (region != null)
                 {
                     DmtxMessage msg = isMosaic ? decode.MosaicRegion(region, -1) : decode.MatrixRegion(region, -1);
-                    string message = Encoding.ASCII.GetString(msg.Output, 0, msg.Output.Length);
+                    string message = Encoding.GetString(msg.Output, 0, msg.Output.Length);
                     message = message.Substring(0, message.IndexOf('\0'));
                     if (!result.Contains(message))
                     {
@@ -140,8 +156,8 @@ namespace DataMatrix.net
             BitmapData bd = b.LockBits(rect, ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
             try
             {
-                byte[] pxl = new byte[bd.Stride * b.Height];
-                Marshal.Copy(bd.Scan0, pxl, 0, bd.Stride * b.Height);
+                byte[] pxl = new byte[bd.Stride*b.Height];
+                Marshal.Copy(bd.Scan0, pxl, 0, bd.Stride*b.Height);
                 stride = bd.Stride;
                 return pxl;
             }
